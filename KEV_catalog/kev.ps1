@@ -14,7 +14,7 @@ Invoke-WebRequest -Uri "https://www.cisa.gov/sites/default/files/feeds/known_exp
 # 古いKEVカタログが存在するか確認
 if (Test-Path "$path\before_KEV.json") {
     # beforeとafterのファイルサイズを比較
-    $before_time = (Get-ItemProperty "$path\before_KEV.json").CreationTime.ToString("yyyy/MM/dd")
+    $before_time = (Get-ItemProperty "$path\before_KEV.json").LastWriteTime.ToString("yyyy/MM/dd")
     $before_datesize = (Get-ItemProperty "$path\before_KEV.json").Length
     $now_datesize = (Get-ItemProperty "$path\now_KEV.json").Length
 
